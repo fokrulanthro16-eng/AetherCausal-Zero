@@ -8,11 +8,25 @@
 [![Google Gemini API](https://img.shields.io/badge/Google_Gemini-API_2.0_/_1.5-8E44AD?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev)
 [![Streamlit](https://img.shields.io/badge/Streamlit-Institutional_Dashboard-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io)
 [![EVM Compatible](https://img.shields.io/badge/EVM-Smart_Contract_Payloads-3C3C3D?style=for-the-badge&logo=ethereum&logoColor=white)](https://ethereum.org)
+[![Institutional Dark-Mode](https://img.shields.io/badge/UI-Obsidian_Glassmorphism-00F3FF?style=for-the-badge)](app.py)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
 *A glass-box, adversarial multi-agent prediction & causal arbitration framework for institutional crypto asset management, DeFi strategy verification, and automated smart contract execution.*
 
 </div>
+
+---
+
+## 🖼️ Architectural & Visual Overview
+
+### 1. Multi-Agent Pipeline & State Graph Architecture
+![Architecture DAG Diagram](./assets/architecture_dag.png)
+
+### 2. Institutional Dark-Mode Dashboard & Bayesian Verdict
+![Dashboard Overview UI](./assets/dashboard_overview.png)
+
+### 3. Smart Contract Execution & EVM Payload Simulator
+![EVM Payload Simulator UI](./assets/evm_payload_sim.png)
 
 ---
 
@@ -33,46 +47,7 @@
 
 ## 🏛️ Multi-Agent System Architecture
 
-```
-                               ┌─────────────────────────────┐
-                               │     User Input Hypothesis   │
-                               │  & Market Regime Parameters │
-                               └──────────────┬──────────────┘
-                                              │
-                                              ▼
-                               ┌─────────────────────────────┐
-                               │   Quant Bull Synthesizer    │
-                               │ • Positive Reflexivity      │
-                               │ • Growth Catalysts          │
-                               │ • Expected EV ($M)          │
-                               └──────────────┬──────────────┘
-                                              │
-                                              ▼
-                               ┌─────────────────────────────┐
-                               │   Adversarial Bear Auditor  │
-                               │ • Oracle Lag & MEV Vectors  │
-                               │ • Liquidation Cascades      │
-                               │ • Black-Swan Stress Test    │
-                               └──────────────┬──────────────┘
-                                              │
-                                              ▼
-                               ┌─────────────────────────────┐
-                               │   Bayesian Causal Arbiter   │
-                               │ • Bayes' Update P(H|E)      │
-                               │ • Causal DAG Topology       │
-                               │ • Verification Matrix       │
-                               └──────────────┬──────────────┘
-                                              │
-                                              ▼
-                               ┌─────────────────────────────┐
-                               │   EVM Payload Simulator     │
-                               │ • Target Contract & Selector│
-                               │ • Gas & Safety Guardrails   │
-                               │ • Hex Calldata Payload      │
-                               └─────────────────────────────┘
-```
-
-### LangGraph State Flow (Mermaid Specification)
+### LangGraph State Flow Specification
 ```mermaid
 graph TD
     A[START: Market Context & Hypothesis] --> B[Quant Bull Synthesizer Node]
@@ -92,17 +67,17 @@ graph TD
 ## 🧮 Mathematical & Algorithmic Rigor
 
 ### 1. Prior-to-Posterior Bayesian Updating
-The Bayesian Causal Arbiter evaluates the posterior probability $P(H|E)$ of a financial hypothesis $H$ given adversarial evidence $E$:
+The Bayesian Causal Arbiter evaluates the posterior probability $P(\text{Thesis} \mid \text{Evidence})$ of a financial hypothesis $\text{Thesis}$ given adversarial evidence $\text{Evidence}$:
 
-$$P(H|E) = \frac{P(E|H) \cdot P(H)}{P(E|H) \cdot P(H) + P(E|\neg H) \cdot P(\neg H)}$$
+$$P(\text{Thesis} \mid \text{Evidence}) = \frac{P(\text{Evidence} \mid \text{Thesis}) \cdot P(\text{Thesis})}{P(\text{Evidence} \mid \text{Thesis}) \cdot P(\text{Thesis}) + P(\text{Evidence} \mid \neg\text{Thesis}) \cdot P(\neg\text{Thesis})}$$
 
 Where:
-- $P(H)$: Prior belief probability (default baseline $0.50$).
-- $P(E|H)$: Likelihood score derived from the Quant Bull confidence metric ($\text{Conf}_{\text{Bull}}$).
-- $P(E|\neg H)$: Complement likelihood weighted by Adversarial Bear risk score ($\text{Risk}_{\text{Bear}}$).
+- $P(\text{Thesis})$: Prior belief probability (default baseline $0.50$).
+- $P(\text{Evidence} \mid \text{Thesis})$: Likelihood score derived from the Quant Bull confidence metric ($\text{Conf}_{\text{Bull}}$).
+- $P(\text{Evidence} \mid \neg\text{Thesis})$: Complement likelihood weighted by Adversarial Bear risk score ($\text{Risk}_{\text{Bear}}$).
 
 ### 2. EVM Gas & Calldata Encoding
-When $P(H|E) \ge 0.65$ (Safety Threshold), the engine formats ABI-encoded EVM payload hex strings:
+When $P(\text{Thesis} \mid \text{Evidence}) \ge 0.65$ (Safety Threshold), the engine formats ABI-encoded EVM payload hex strings:
 - **Function Selector**: `0xa9059cbb` (`rebalanceVaultCausal(bytes32,uint256,uint256,bool)`)
 - **Calldata Composition**: `Selector (4 bytes) + Target Address (32 bytes) + Amount/Slippage (32 bytes)`
 - **Dynamic Gas Estimation**: $\text{Gas}_{\text{Est}} = 210,000 + (\text{BaseFee}_{\text{Gwei}} \times 150)$
