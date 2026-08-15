@@ -1,4 +1,23 @@
+# Python & Bytecode
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Environment Variables
 .env
+
+# Streamlit Local Cache
 .streamlit/
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+
+# IDE / System
+.idea/
+.vscode/
+.DS_Store
