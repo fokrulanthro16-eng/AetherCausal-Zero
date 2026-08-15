@@ -353,7 +353,7 @@ with tab1:
             height=280,
             margin=dict(l=20, r=20, t=50, b=20)
         )
-        st.plotly_chart(fig_gauge, use_container_state=True)
+        st.plotly_chart(fig_gauge, use_container_width=True)
 
     # Verification Matrix Table
     st.markdown("### 📋 Causal Verification Matrix (Bull vs Bear vs Arbiter)")
@@ -446,7 +446,7 @@ with tab2:
             yaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
             margin=dict(l=40, r=40, t=20, b=40)
         )
-        st.plotly_chart(fig_dag, use_container_state=True)
+        st.plotly_chart(fig_dag, use_container_width=True)
     else:
         st.warning("Causal DAG layout data empty.")
 
