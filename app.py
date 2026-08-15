@@ -207,7 +207,7 @@ hypothesis_input = st.sidebar.text_area(
     height=110
 )
 
-run_button = st.sidebar.button("⚡ Run Multi-Agent Causal Engine", type="primary", use_container_state=True)
+run_button = st.sidebar.button("⚡ Run Multi-Agent Causal Engine", type="primary", use_container_width=True)
 
 
 # ==========================================
